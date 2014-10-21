@@ -1,0 +1,4 @@
+= simple_form_for @client, :html => {:class => 'form-horizontal' } do |f|
+  = f.input :name, :required => true
+  div
+    = f.button :submit, 'Add Client', :class=> "btn btn-primary"
