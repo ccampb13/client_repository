@@ -11,9 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021185702) do
+ActiveRecord::Schema.define(version: 20141021235345) do
+
+  create_table "client_stakeholders", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "stakeholder_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "client_stakeholders", ["client_id"], name: "index_client_stakeholders_on_client_id"
+  add_index "client_stakeholders", ["stakeholder_id"], name: "index_client_stakeholders_on_stakeholder_id"
 
   create_table "clients", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stakeholders", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

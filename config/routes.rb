@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'clients#index'
 
-  resources :clients
+  resources :clients do
+    resources :stakeholders
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
