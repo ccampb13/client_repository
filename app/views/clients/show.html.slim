@@ -1,2 +1,18 @@
 h1= @client.name
-= link_to "Add New Stakeholder", new_client_stakeholder_path(@client), class: "button"
+= link_to "Edit Client", edit_client_path(@client), class: "button small secondary"
+.row
+  .col-md-12
+    - if @stakeholders.empty?
+      p This client returns no stakeholders.
+    - else
+      p Current list of stakeholders
+      - @stakeholders.each do |stakeholder|
+        h4= stakeholder.name
+.row
+  .col-md-12
+    - if @products.empty?
+      p This client currently uses no products.
+    - else
+      p Current list of products in use
+      - @products.each do |product|
+        h4= product.name

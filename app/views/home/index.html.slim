@@ -1,0 +1,29 @@
+.page-heading
+  .container
+
+.container
+  .client-one
+    .row
+      .col-md-4
+        = link_to "Add New Client", new_client_path, class: "btn btn-primary"
+      .col-md-4
+        = link_to "Add New Stakeholder", new_stakeholder_path, class: "btn btn-primary"
+      .col-md-4
+        = link_to "Add New Product", new_product_path, class: "btn btn-primary"
+    .row
+      .col-md-4
+        .clients-col
+          h4 Current List of Clients
+          - @clients.each do |client|
+            =link_to client.name, client_path(client)
+            br
+      .col-md-4
+        .stakeholder-col
+          h4 Current List of Stakeholders
+          - @stakeholders.each do |stakeholder|
+            p= stakeholder.name
+      .col-md-4
+        .product-col
+          h4 Current List of Products
+          - @products.each do |product|
+            p= product.name

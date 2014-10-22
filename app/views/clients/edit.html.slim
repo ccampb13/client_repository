@@ -1,0 +1,13 @@
+= simple_form_for @client, :html => {:class => 'form-horizontal' } do |f|
+  .row
+    .col-md-4
+      h3 Name of Client
+      = f.input :name, :required => true
+    .col-md-4
+      h3 List of potential stakeholders
+      = f.collection_check_boxes :stakeholder_ids, Stakeholder.all, :id, :name
+    .col-md-4
+      h3 List of potential products
+      = f.collection_check_boxes :product_ids, Product.all, :id, :name
+  div
+    = f.button :submit, 'Update Client', :class=> "btn btn-primary"

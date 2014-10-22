@@ -1,0 +1,4 @@
+= simple_form_for @stakeholder, :html => {:class => 'form-horizontal' } do |f|
+  = f.input :name, :required => true
+  div
+    = f.button :submit, 'Add Stakeholder', :class=> "btn btn-primary"
